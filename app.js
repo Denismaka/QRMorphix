@@ -16,7 +16,7 @@ const downloadQRCode = async () => {
         const a = document.createElement("a");
         a.style.display = "none";
         a.href = url;
-        a.download = "qrcode.png";
+        a.download = "qrcode.svg";
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
@@ -124,7 +124,7 @@ btn.addEventListener("click", () => {
     // Génère le QR code
     qr.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
         qrValue
-    )}`;
+    )}&format=svg`;
 });
 
 input.addEventListener("keyup", () => {
