@@ -4,10 +4,6 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 [![Dark Mode](https://img.shields.io/badge/Dark_Mode-211F1F?style=for-the-badge&logo=dark-reader&logoColor=white)](https://github.com/Denismaka/qrmorphix)
 
-<div align="center">
-  <img src="https://i.imgur.com/YZkqQz1.png" alt="QR Code Generator Demo" width="600px"/>
-</div>
-
 ## ✨ Caractéristiques
 
 -   🎯 Génération instantanée de QR codes
