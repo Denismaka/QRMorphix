@@ -130,13 +130,21 @@
 
                 <div class="resultat-qr mt-6 hidden">
                     <div
-                        class="bg-white dark:bg-primary-900 p-4 rounded-lg shadow-sm flex items-center justify-center"
+                        class="bg-white dark:bg-primary-900 p-4 rounded-lg shadow-sm flex flex-col items-center justify-center gap-4"
                     >
                         <img
                             src=""
                             alt="QR Code"
                             class="max-w-full h-auto dark:invert"
                         />
+                        <button
+                            type="button"
+                            id="downloadBtn"
+                            class="w-full bg-secondary-500 hover:bg-secondary-600 dark:bg-secondary-600 dark:hover:bg-secondary-500 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2"
+                        >
+                            <ion-icon name="download-outline"></ion-icon>
+                            Télécarger le QR Code
+                        </button>
                     </div>
                 </div>
             </div>

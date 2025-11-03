@@ -4,7 +4,27 @@ const input = document.querySelector("form input");
 const info = document.querySelector(".info");
 const qr = document.querySelector(".resultat-qr img");
 const darkModeToggle = document.querySelector("#darkModeToggle");
+const downloadBtn = document.querySelector("#downloadBtn");
 const html = document.documentElement;
+
+// Fontion pour télcharger le QR code
+const downloadQRCode = async () => {
+    try {
+        const response = await fetch(qr.src);
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = "qrcode.png";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+    } catch (error) {
+        showError("Erreur lors du téléchargement du QR code");
+    }
+};
 
 // Gestion du mode sombre
 const isDarkMode = () => localStorage.getItem("darkMode") === "true";
@@ -17,7 +37,7 @@ const disableDarkMode = () => {
     localStorage.setItem("darkMode", "false");
 };
 
-// Initialiser le mode sombre selon la préférence système
+// Initialiser le mode sombre selon la prférence systme
 if (
     isDarkMode() ||
     (!localStorage.getItem("darkMode") &&
@@ -93,7 +113,7 @@ btn.addEventListener("click", () => {
         )
     );
 
-    // Ajoute les nouveaux gestionaires d'événements
+    // Ajoute les noveaux gestionaires d'événements
     qr.addEventListener("load", showSuccess);
     qr.addEventListener("error", () =>
         showError(
@@ -112,3 +132,6 @@ input.addEventListener("keyup", () => {
         resetUI();
     }
 });
+
+// Gestinaire d'événement pour le téléchargement
+downloadBtn.addEventListener("click", downloadQRCode);
