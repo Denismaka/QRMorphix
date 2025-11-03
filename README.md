@@ -54,13 +54,13 @@ Le projet utilise une palette de couleurs personnalisée via Tailwind CSS :
 ### Mode Clair
 
 <div align="center">
-  <img src="images/light.png" alt="Light Mode" width="400px"/>
+  <img src="images/light.jpg" alt="Light Mode" width="400px"/>
 </div>
 
 ### Mode Sombre
 
 <div align="center">
-  <img src="images/dark.png" alt="Dark Mode" width="400px"/>
+  <img src="images/dark.jpg" alt="Dark Mode" width="400px"/>
 </div>
 
 ## 🤝 Contribution
