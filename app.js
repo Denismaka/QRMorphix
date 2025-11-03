@@ -93,7 +93,7 @@ btn.addEventListener("click", () => {
         )
     );
 
-    // Ajoute les nouveaux gestionnaires d'événements
+    // Ajoute les nouveaux gestionaires d'événements
     qr.addEventListener("load", showSuccess);
     qr.addEventListener("error", () =>
         showError(
