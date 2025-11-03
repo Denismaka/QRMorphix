@@ -49,14 +49,14 @@ const resetUI = () => {
     info.classList.add("hidden");
 };
 
-// Fonction pour afficher une erreur
+// Foncton pour afficher une erreur
 const showError = (message) => {
     info.classList.remove("hidden");
     info.innerText = message;
     resultat.classList.add("hidden");
 };
 
-// Fonction pour afficher le succès
+// Fonction pr afficher le succès
 const showSuccess = () => {
     resultat.classList.remove("hidden");
     btn.innerText = "QR Code généré !";
@@ -79,13 +79,13 @@ btn.addEventListener("click", () => {
     }
 
     try {
-        new URL(qrValue); // Vérifie si l'URL est valide
+        new URL(qrValue); // Vérifie si l'URL est vld
     } catch (e) {
         showError("L'URL saisie n'est pas valide");
         return;
     }
 
-    // Réinitialise les gestionnaires d'événements précédents
+    // Réinitialise ls gestionnaires d'événements précédent
     qr.removeEventListener("load", showSuccess);
     qr.removeEventListener("error", () =>
         showError(
