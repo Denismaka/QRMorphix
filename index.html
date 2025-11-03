@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="logo.svg" />
+        <meta name="theme-color" content="#f97316" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                50: "#fff7ed",
+                                100: "#ffedd5",
+                                500: "#f97316",
+                                600: "#ea580c",
+                                900: "#0f172a",
+                            },
+                            secondary: {
+                                100: "#dbeafe",
+                                500: "#1e40af",
+                                600: "#1e3a8a",
+                            },
+                            accent: {
+                                500: "#34d399",
+                                600: "#059669",
+                            },
+                            danger: {
+                                500: "#dc2626",
+                                600: "#b91c1c",
+                            },
+                            warning: {
+                                500: "#fbbf24",
+                                600: "#f59e42",
+                            },
+                            surface: "#fff7ed",
+                            glass: "rgba(255,255,255,0.7)",
+                            darkglass: "rgba(15,23,42,0.7)",
+                        },
+                        fontFamily: {
+                            sans: ["Inter", "system-ui", "sans-serif"],
+                        },
+                        boxShadow: {
+                            glass: "0 8px 32px 0 rgba(249, 115, 22, 0.18)",
+                            "glass-dark": "0 8px 32px 0 rgba(15, 23, 42, 0.3)",
+                            glow: "0 0 0 4px #f9731633",
+                        },
+                        backgroundImage: {
+                            "gradient-radial":
+                                "radial-gradient(ellipse at top left, #f97316 0%, #1e40af 100%)",
+                            "gradient-radial-dark":
+                                "radial-gradient(ellipse at top left, #0f172a 0%, #f97316 100%)",
+                            "gradient-glass":
+                                "linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(219,234,254,0.7) 100%)",
+                            "gradient-glass-dark":
+                                "linear-gradient(135deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.7) 100%)",
+                        },
+                    },
+                },
+            };
+        </script>
+        <title>QRMorphix</title>
+    </head>
+    <body
+        class="min-h-screen bg-gradient-radial dark:bg-gradient-radial-dark font-sans transition-colors duration-300"
+    >
+        <div
+            class="container mx-auto px-4 h-screen flex items-center justify-center"
+        >
+            <!-- Dark Mode Toggle -->
+            <button
+                id="darkModeToggle"
+                class="fixed top-4 right-4 p-2 rounded-full bg-primary-50 dark:bg-primary-900 shadow-glass dark:shadow-glass-dark transition-all duration-300"
+            >
+                <ion-icon
+                    name="moon-outline"
+                    class="text-2xl dark:hidden text-primary-900"
+                ></ion-icon>
+                <ion-icon
+                    name="sunny-outline"
+                    class="text-2xl hidden dark:block text-primary-50"
+                ></ion-icon>
+            </button>
+
+            <div
+                class="w-full max-w-md bg-glass dark:bg-darkglass backdrop-blur-lg rounded-2xl shadow-glass dark:shadow-glass-dark p-8 transition-all duration-300"
+            >
+                <h1
+                    class="text-3xl font-bold text-primary-900 dark:text-primary-50 text-center mb-8 flex items-center justify-center gap-2"
+                >
+                    QRMorphix
+                    <ion-icon
+                        name="qr-code-outline"
+                        class="text-primary-500"
+                    ></ion-icon>
+                </h1>
+
+                <form class="space-y-6">
+                    <div class="space-y-2">
+                        <label
+                            for="resultat"
+                            class="block text-primary-900 dark:text-primary-50 font-medium"
+                        >
+                            Indiquer un URL pour générer un QR code
+                        </label>
+                        <input
+                            type="url"
+                            name="resultat"
+                            id="resultat"
+                            placeholder="Indiquer un URL"
+                            class="w-full px-4 py-3 rounded-lg border border-secondary-100 dark:border-primary-500 bg-white/80 dark:bg-primary-900/80 text-primary-900 dark:text-primary-50 focus:border-primary-500 dark:focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:focus:ring-primary-500/40 outline-none transition"
+                        />
+                    </div>
+
+                    <p
+                        class="info text-danger-500 dark:text-danger-500 text-center font-medium hidden"
+                    ></p>
+
+                    <button
+                        type="button"
+                        class="w-full bg-primary-500 hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md"
+                    >
+                        Générer un QR code
+                    </button>
+                </form>
+
+                <div class="resultat-qr mt-6 hidden">
+                    <div
+                        class="bg-white dark:bg-primary-900 p-4 rounded-lg shadow-sm flex items-center justify-center"
+                    >
+                        <img
+                            src=""
+                            alt="QR Code"
+                            class="max-w-full h-auto dark:invert"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+        <!-- icons -->
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+    </body>
+</html>
